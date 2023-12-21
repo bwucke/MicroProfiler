@@ -6,7 +6,8 @@ Tiny simple easy to use header-only profiler for C++ functions.
 - Easy to use: Simply put `PRS` at the start of all functions you want to profile, or `PRST(x)` at the start of a block you want to profile.
 - Call `Prof<>::Report();` when you're done accumulating measurements to print them out.
 - Reset measurements: Call `Prof<>::Reset();` to clear the data and start measuring anew.
-- Displays total and maximum time spent in a block
+- Displays total and maximum time spent in a block/function
+- Inner workings: Creates a tiny object, timer is started in the constructor, stopped in destructor, that is when the object goes out of scope. Thanks to that you don't need to hunt for all the `return`s to stop the timer.
 
 ## Installation
 
@@ -15,7 +16,7 @@ Just copy the .hpp file somewhere into your project.
 ## Example:
 
 ```cpp
-#include "microprofile.h"
+#include "MicroProfiler.hpp"
 
 SomeType GetAndProcessData() {
    PRS
@@ -77,3 +78,4 @@ Public Domain. Do what you want.
 
 Project Link: [https://github.com/your_username_/MicroProfiler](https://github.com/bwucke/MicroProfiler)
 
+This document was created with help of phind.com AI assistant who has a rather rich imagination so if I missed some confabulation, my apologies.
