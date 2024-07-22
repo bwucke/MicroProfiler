@@ -45,7 +45,7 @@ int main()
    }
    while(! UserExitRequested() );
 
-   Proc<>::Report();
+   Prof<>::Report();
    return 0;
 }
 ```
